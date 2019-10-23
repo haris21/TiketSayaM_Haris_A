@@ -10,10 +10,47 @@
       "client_info": {
         "mobilesdk_app_id": "1:903010205165:android:c768216f78d1cdfef97be4",
         "android_client_info": {
+          "package_name": "Tiket.Saya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903010205165-k0pfdfmim5aponk1hads7saeorkf84kp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACCUf-JdcZ62n6QJMbBnFXQJy8ezB0aks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903010205165-k0pfdfmim5aponk1hads7saeorkf84kp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903010205165:android:2b5559ae8e21d119f97be4",
+        "android_client_info": {
           "package_name": "com.example.tiketsayam_haris_a"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "903010205165-s5v4gakr50aqn8e7r2on0r8leqtv5p58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tiketsayam_haris_a",
+            "certificate_hash": "f4f364513d2944eb2b4ad3cdb52a918bee23fc52"
+          }
+        },
         {
           "client_id": "903010205165-k0pfdfmim5aponk1hads7saeorkf84kp.apps.googleusercontent.com",
           "client_type": 3
