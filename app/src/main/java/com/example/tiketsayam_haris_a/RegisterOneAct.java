@@ -3,6 +3,7 @@ package com.example.tiketsayam_haris_a;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,36 +53,50 @@ public class RegisterOneAct extends AppCompatActivity {
         btncontinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //save data to local storage
-                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(username_key, username.getText().toString());
-                editor.apply();
+                String usrnme = username.getText().toString().trim();
+                String eml = email.getText().toString().trim();
+                String psswd = password.getText().toString().trim();
+                if (TextUtils.isEmpty(usrnme)) {
+                    boolean isEmptyFields = true;
+                    username.setError("User name can't empty");
+                } else if (TextUtils.isEmpty(psswd)) {
+                    boolean isEmptyFields = true;
+                    password.setError("User name can't empty");
+                } else if (TextUtils.isEmpty(eml)) {
+                    boolean isEmptyFields = true;
+                    email.setError("User name can't empty");
+                } else {
+                    //save data to local storage
+                    SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(username_key, username.getText().toString());
+                    editor.apply();
+
+                    //Toast.makeText(getApplicationContext(), "User nme" + username.getText().toString(), Toast.LENGTH_SHORT).show();
+
+                    //save databases
+                    reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
+
+                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            dataSnapshot.getRef().child("username").setValue(username.getText().toString());
+                            dataSnapshot.getRef().child("password").setValue(password.getText().toString());
+                            dataSnapshot.getRef().child("email_address").setValue(email.getText().toString());
+                            dataSnapshot.getRef().child("user_balance").setValue(200);
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                    Intent gototoregistertwo = new Intent(RegisterOneAct.this, RegisterTwo.class);
+                    startActivity(gototoregistertwo);
+                }
 
 
-                //Toast.makeText(getApplicationContext(), "User nme" + username.getText().toString(), Toast.LENGTH_SHORT).show();
-
-                //save databases
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        
-                        dataSnapshot.getRef().child("username").setValue(username.getText().toString());
-                        dataSnapshot.getRef().child("password").setValue(password.getText().toString());
-                        dataSnapshot.getRef().child("email_address").setValue(email.getText().toString());
-                        dataSnapshot.getRef().child("user_balance").setValue(email.getText().toString());
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-                Intent gototoregistertwo = new Intent(RegisterOneAct.this, RegisterTwo.class);
-                startActivity(gototoregistertwo);
             }
         });
     }
