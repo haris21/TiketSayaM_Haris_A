@@ -8,23 +8,21 @@
     tools:context=".TicketDetailAct">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/headerdTicket"
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bgheader_pisa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title_ticket"
+        android:id="@+id/titleTicket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/mregular"
-        android:text="Menara Pisa"
         android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="24sp"
@@ -33,19 +31,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/location_ticket"
+        android:id="@+id/locationTicket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/mlight"
         android:lineSpacingExtra="9dp"
-        android:text="Pisa, Italy"
         android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_ticket" />
+        app:layout_constraintTop_toBottomOf="@+id/titleTicket" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -64,7 +61,7 @@
         android:paddingBottom="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location_ticket">
+        app:layout_constraintTop_toBottomOf="@+id/locationTicket">
 
         <TextView
 
@@ -111,6 +108,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/photoTicket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mregular"
@@ -152,6 +150,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/wifiTicket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mregular"
@@ -192,6 +191,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/festivalTicket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mregular"
@@ -214,6 +214,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/descTicket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

@@ -59,20 +59,23 @@ public class RegisterOneAct extends AppCompatActivity {
                 if (TextUtils.isEmpty(usrnme)) {
                     boolean isEmptyFields = true;
                     username.setError("User name can't empty");
-                } else if (TextUtils.isEmpty(psswd)) {
+                }
+                if (TextUtils.isEmpty(psswd)) {
                     boolean isEmptyFields = true;
-                    password.setError("User name can't empty");
-                } else if (TextUtils.isEmpty(eml)) {
+                    password.setError("Password name can't empty");
+                }
+                if (TextUtils.isEmpty(eml)) {
                     boolean isEmptyFields = true;
-                    email.setError("User name can't empty");
+                    email.setError("Email can't empty");
                 } else {
+                    // change state to loading
+                    btncontinue.setEnabled(false);
+                    btncontinue.setText("Loading...");
                     //save data to local storage
                     SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(username_key, username.getText().toString());
                     editor.apply();
-
-                    //Toast.makeText(getApplicationContext(), "User nme" + username.getText().toString(), Toast.LENGTH_SHORT).show();
 
                     //save databases
                     reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
@@ -84,7 +87,6 @@ public class RegisterOneAct extends AppCompatActivity {
                             dataSnapshot.getRef().child("password").setValue(password.getText().toString());
                             dataSnapshot.getRef().child("email_address").setValue(email.getText().toString());
                             dataSnapshot.getRef().child("user_balance").setValue(200);
-
                         }
 
                         @Override

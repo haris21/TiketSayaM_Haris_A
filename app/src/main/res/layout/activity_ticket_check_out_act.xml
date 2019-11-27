@@ -94,6 +94,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/namaWisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mregular"
@@ -102,6 +103,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/lokasiWisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -148,6 +150,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/ketentuanWisata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -204,13 +207,13 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/textsaldo"
+                android:id="@+id/userBalance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/mmedium"
-                android:text="US$117"
+
                 android:textColor="@color/bluePrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -243,7 +246,7 @@
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="9dp"
                 android:fontFamily="@font/mmedium"
-                android:text="US$20"
+
                 android:textAlignment="center"
                 android:textColor="@color/greenprimary"
                 android:textSize="30sp" />
