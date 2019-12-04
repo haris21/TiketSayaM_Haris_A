@@ -72,9 +72,6 @@ public class TicketDetailAct extends AppCompatActivity {
             }
         });
 
-//        Toast.makeText(getApplicationContext(), "Jenis Tiket " + jenisTiket.toString(), Toast.LENGTH_SHORT).show();
-
-
         //functions
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override

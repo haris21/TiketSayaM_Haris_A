@@ -156,10 +156,11 @@ public class TicketCheckOutACt extends AppCompatActivity {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gototicketdetail = new Intent(TicketCheckOutACt.this, TicketDetailAct.class);
-                //put data to intent
-                gototicketdetail.putExtra("jenisTiket", jenisTiket);
-                startActivity(gototicketdetail);
+//                Intent gototicketdetail = new Intent(TicketCheckOutACt.this, TicketDetailAct.class);
+//                //put data to intent
+//                gototicketdetail.putExtra("jenisTiket", jenisTiket);
+//                startActivity(gototicketdetail);
+                onBackPressed();
             }
         });
 
@@ -175,7 +176,7 @@ public class TicketCheckOutACt extends AppCompatActivity {
                         reference3.getRef().child("nama_wisata").setValue(namawisata.getText().toString());
                         reference3.getRef().child("lokasi").setValue(lokasiwisata.getText().toString());
                         reference3.getRef().child("ketentuan").setValue(ketentuan.getText().toString());
-                        reference3.getRef().child("jumlahTiket").setValue(jumlahtiket);
+                        reference3.getRef().child("jumlahTiket").setValue(jumlahtiket.intValue());
                         reference3.getRef().child("dateWisata").setValue(dateWisata);
                         reference3.getRef().child("timeWisata").setValue(timeWisata);
 

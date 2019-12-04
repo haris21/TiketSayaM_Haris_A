@@ -96,6 +96,7 @@ public class SignInAct extends AppCompatActivity {
                                     // goto next page
                                     Intent gotoHome = new Intent(SignInAct.this, HomeAct.class);
                                     startActivity(gotoHome);
+                                    finish();
                                 } else {
                                     Toast.makeText(SignInAct.this, "User  name or passsword is wrong", Toast.LENGTH_SHORT).show();
                                 }
@@ -115,4 +116,6 @@ public class SignInAct extends AppCompatActivity {
             }
         });
     }
+
+
 }

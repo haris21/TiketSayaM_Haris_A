@@ -36,8 +36,8 @@ public class RegisterTwo extends AppCompatActivity {
     public EditText edtnama, edtpassion;
     Uri photo_location;
     Integer photomax = 1;
-    DatabaseReference reference;
     StorageReference storage;
+    DatabaseReference reference;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -64,8 +64,7 @@ public class RegisterTwo extends AppCompatActivity {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoregisterone = new Intent(RegisterTwo.this, RegisterOneAct.class);
-                startActivity(gotoregisterone);
+                onBackPressed();
             }
         });
 

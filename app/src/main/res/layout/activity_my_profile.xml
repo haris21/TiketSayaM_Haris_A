@@ -33,7 +33,7 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/foto"
+        android:src="@drawable/icon_nopic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/mmedium"
-        android:text="M haris Alifi"
         android:textColor="#fff"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/mlight"
-        android:text="Traveller"
         android:textColor="#fff"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,123 +107,17 @@
             android:layout_marginBottom="16dp"
             android:background="#EDEDED" />
 
-        <LinearLayout
-            android:id="@+id/btnDetailMyTicket"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myTicketPlace"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:src="@drawable/ic_ticket_buy" />
-
-            <LinearLayout
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="12dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mregular"
-                    android:text="Menara Pisa"
-                    android:textColor="@color/blackPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="Pisa City, Italy"
-                    android:textColor="@color/greyPrimary"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="11dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="3 Tickets"
-                    android:textColor="@color/bluePrimary"
-                    android:textSize="12sp" />
+            android:layout_height="120dp">
 
 
-            </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:src="@drawable/ic_ticket_buy" />
-
-            <LinearLayout
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="12dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mregular"
-                    android:text="Torri"
-                    android:textColor="@color/blackPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="Village, Jakarta"
-                    android:textColor="@color/greyPrimary"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="11dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/mlight"
-                    android:text="2 Tickets"
-                    android:textColor="@color/bluePrimary"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
 
 
-        </LinearLayout>
 
 
     </LinearLayout>
@@ -245,7 +137,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/btnMyDashboard"
+        android:id="@+id/btnSignOut"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -261,6 +153,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditProfile" />
+
+    <Button
+        android:id="@+id/btnBackHome"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

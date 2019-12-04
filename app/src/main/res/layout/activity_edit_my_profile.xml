@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:orientation="vertical"
-        android:scrollbars="none"
-        tools:ignore="MissingConstraints">
+        android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingBottom="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -63,13 +63,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:background="@drawable/bg_whiteprimary"
                 android:orientation="vertical"
-                android:paddingTop="25dp"
-                android:paddingBottom="25dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -96,6 +96,7 @@
                     </TextView>
 
                     <EditText
+                        android:id="@+id/namaEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_input_edit"
@@ -109,7 +110,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
@@ -128,6 +128,7 @@
                         android:textSize="20sp" />
 
                     <EditText
+                        android:id="@+id/passionEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_input_edit"
@@ -138,7 +139,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
@@ -147,7 +147,6 @@
                     android:orientation="vertical">
 
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
@@ -157,6 +156,7 @@
                         android:textSize="20sp" />
 
                     <EditText
+                        android:id="@+id/usernameEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_input_edit"
@@ -186,11 +186,12 @@
                         android:textSize="20sp" />
 
                     <EditText
+                        android:id="@+id/passwordEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_input_edit"
                         android:fontFamily="@font/mmedium"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:lines="1"
                         android:paddingLeft="12dp"
                         android:textColor="@color/blackPrimary" />
@@ -215,6 +216,7 @@
                         android:textSize="20sp" />
 
                     <EditText
+                        android:id="@+id/emailEditProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_input_edit"
@@ -224,6 +226,7 @@
                         android:paddingLeft="12dp"
                         android:textColor="@color/blackPrimary" />
                 </LinearLayout>
+
 
             </LinearLayout>
 
@@ -246,13 +249,14 @@
                 android:layout_height="90dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="190dp"
-                android:src="@drawable/foto"
+                android:src="@drawable/icon_nopic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <Button
+                android:id="@+id/btnuploadphotoeditprofile"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="120dp"
@@ -267,45 +271,68 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-            <Button
-                android:id="@+id/btnContinue2"
-                android:layout_width="210dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/bg_blueprimary"
-                android:fontFamily="@font/mmedium"
-                android:text="Save Profile"
-                android:textColor="#FFF"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <LinearLayout
-                android:id="@+id/btnBack"
-                android:layout_width="70dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/bg_layoutwhite"
-                android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@+id/btnContinue"
-                app:layout_constraintHorizontal_bias="0.0"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_back">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                </ImageView>
+                    <LinearLayout
+                        android:id="@+id/btnBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_layoutwhite"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_back">
+
+                        </ImageView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/btnSaveEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_blueprimary"
+                        android:fontFamily="@font/mmedium"
+                        android:text="Save Profile"
+                        android:textColor="#FFF"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
